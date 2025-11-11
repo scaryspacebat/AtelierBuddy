@@ -2,7 +2,45 @@
 <html lang="en">
 <head>
   <link type="text/css" rel="stylesheet" href="style.css" />
+  <script src="main.js" async></script>
+  <script src="images.js" async></script>
+  <script src="effects.js" async></script>
 </head>
-<body>
-    test1234
+<body onload="initPage();">
+  <div class="container">
+    <div id="listOfImages" class="panel">
+      <div id="listOfImages-header">
+        Images:
+        <div id="button" onclick="showAddImageDialog();">&#65291;</div>
+      </div>
+    </div>
+
+    <div id="currentImageDisplay" class="panel">
+      Source:
+      <img id='srcImageDisplay' style="height:100px; width:100px;">
+      After:
+    </div>
+
+    <div id="listOfEffects" class="panel">
+      <div id="listOfEffects-header">
+        Effects:
+        <div id="button">&#65291;</div>
+      </div>
+    </div>
+
+    <div id="effectSettings" class="panel">
+      Settings:
+    </div>
+  </div>
+
+    <div id="addImageDialog" class="panel dialog">
+      Select your image:<br>
+      <input type='file' accept='image/*' onchange='openFile(event)'>
+      <br>
+      <input type="button">Cancel</input>
+      <input type="button">Submit</input>
+    </div>
+
+    <div id="notification" class="notification panel"></div>
+
 </body>

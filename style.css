@@ -1,10 +1,72 @@
-body {
-  font-family: "Helvetica", Sans-Serif;
-  background-color: #00ff00;
+:root {
+  --Accent1: #00ff00;
+  --Accent2: #ff00ff;
 }
 
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  font-family: "Helvetica", Sans-Serif;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  margin: 0px;
+  min-height:100vh;
+  display: grid;
+  grid-template-columns:  300px auto 300px;
+}
+
+.panel {
+  margin: 12px;
+  padding: 12px;
+  background-color: #212121;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to bottom, #ffffff40, #00000040);
+}
+.notification{
+  visibility: hidden;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index:100;
+  width: 300px;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+  padding: 12px;
+}
+
+.dialog{
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:100;
+  width: 300px;
+  max-height: 500px;
+}
+
+#listOfImages{
+  height: 100%;
+}
+
+#listOfEffects{
+  height: 100%;
+}
+
+#effectSettings{
+  grid-column-start: 2;
+}
+
+#addImageDialog{
+  visibility: hidden;
+  position: fixed;
+  top: 24px;
+  right: 24px;
 }
