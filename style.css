@@ -1,19 +1,24 @@
 :root {
+  --fontColor: #ffffff;
   --Accent1: #00ff00;
   --Accent2: #ff00ff;
 }
 
 body {
   font-family: "Helvetica", Sans-Serif;
-  background-color: #333333;
-  color: #ffffff;
+  size: 12px;
+  color: var(--fontColor);
   padding: 0px;
   margin: 0px;
+  //background-color: hsl( 0 0% 15% );
+  background-image: none;
+  background-size: 200px 200px;
+  background-repeat: repeat repeat;
 }
 
 .container {
   margin: 0px;
-  min-height:100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns:  300px auto 300px;
 }
@@ -25,8 +30,10 @@ body {
   border: 10px solid;
   border-image-slice: 1;
   border-width: 1px;
-  border-image-source: linear-gradient(to bottom, #ffffff40, #00000040);
+  border-image-source: linear-gradient(to bottom, hsla(0 0% 100% / 25%), hsla(0 0% 0% / 100%));
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5);
 }
+
 .notification{
   visibility: hidden;
   position: fixed;
@@ -67,6 +74,18 @@ body {
 #addImageDialog{
   visibility: hidden;
   position: fixed;
-  top: 24px;
+  top: 240px;
   right: 24px;
+}
+
+button{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 24px;
+  border-color: var(--Accent1);
+  color: var(--fontColor);
+  size: 12px;
+  background-color: #333333;
+  padding: 8px;
+  margin: 4px;
 }

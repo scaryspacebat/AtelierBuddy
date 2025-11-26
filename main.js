@@ -2,6 +2,7 @@ let imageList = new Array;
 
 function initPage(){
     showNotification("Hello");
+    initBackground();
 }
 
 function addImage(){
