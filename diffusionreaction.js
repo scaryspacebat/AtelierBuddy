@@ -119,7 +119,7 @@ function setWorldState(data){
 
 function step(){
   //turbulenceAdd();
-  turbulenceMove();
+  //turbulenceMove();
   //addNoise();
   applyBlur();
   applyHighpass();
@@ -350,7 +350,7 @@ function display(){
 
   document.body.style.backgroundImage = "url('"+canvas.toDataURL("image/png")+"')";
 
-  setTimeout(step, 1000);
+  if(stepCounter<50) setTimeout(step, 100);
 }
 
 function count_neighbours(px, py){
@@ -365,20 +365,20 @@ function count_neighbours(px, py){
 
 function calculateColor(x, y){
   var val = getStateAt(x, y);
-  var valH = getStateAt(x, y-1)-getStateAt(x, y+1);
-  var valV = getStateAt(x-1, y)-getStateAt(x+1, y);
+  //var valH = getStateAt(x, y-1)-getStateAt(x, y+1);
+  //var valV = getStateAt(x-1, y)-getStateAt(x+1, y);
 
-  var colors = ["#4653FF", "#3643BA", "#000000" ,"#313131"];
+  //var colors = ["#4653FF", "#3643BA", "#000000" ,"#313131"];
   //var colors = ["#36ef43", "#26AA33", "#000000" ,"#434343"];
   //var colors = ["#00a080", "#008080", "#410000" ,"#313131"];
-  //var colors = ["#959595", "#636363", "#313131" ,"#000000"];
+  var colors = ["#404040", "#303030", "#101010" ,"#000000"];
   //var colors = ["#ff00ff", "#ffffff", "#00ff00" ,"#000000"];
 
-  if(val<=0.5){
+  /*if(val<=0.5){
     if(getStateAt(x, y-1)>=0.5) return "#000000";
     else return "#313131";
   }
-  else return "hsl("+(180+valH*180)+" 100 "+(20+valV*60*val)+" / 100%)";
+  else return "hsl("+(180+valH*180)+" 100 "+(20+valV*60*val)+" / 100%)";*/
 
   /*if(val>=0.5){
     return "hsl("+(180+(valH+valV)*180)+" 100 "+(10+valV*90*val)+" / 100%)";
