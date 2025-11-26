@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <link type="text/css" rel="stylesheet" href="style.css" />
+  
   <script src="main.js" async></script>
+  <script src="diffusionreaction.js" async></script>
   <script src="images.js" async></script>
   <script src="effects.js" async></script>
 </head>
@@ -37,8 +39,8 @@
       Select your image:<br>
       <input type='file' accept='image/*' onchange='openFile(event)'>
       <br>
-      <input type="button">Cancel</input>
-      <input type="button">Submit</input>
+      <button onclick="hideAddImageDialog();">Cancel</button>
+      <button>Submit</button>
     </div>
 
     <div id="notification" class="notification panel"></div>
